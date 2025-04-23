@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function findIntersection(arr1, arr2) {
+            var result = []
+            for (i = 0; i < arr1.length; i++) {
+                for (j = 0; j < arr2.length; j++) {
+                    if(arr1[i] === arr2[j]){
+                        var alreadyExists = false;
+                        for(k=0;k<result.length;k++){
+                            if(result[k] === arr1[i]){
+                                alreadyExists = true;
+                                break;
+                            }
+                        }
+                        if(!alreadyExists){
+                            result.push(arr1[i])
+                        }
+                    }
+                }
+            }
+            return result ;
+        }
+
+        const arr1 = [1,2,3,4,5];
+        const arr2 = [3,4,5,6,7];
+
+        const finalResult = findIntersection(arr1,arr2);
+        console.log(finalResult)
+    </script>
+</body>
+
+</html>

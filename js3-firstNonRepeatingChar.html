@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function findNonRepeatingChar(str) {
+            const countMap = {};
+
+            for (let char of str) {
+                countMap[char] = (countMap[char] || 0) + 1;
+            }
+
+            for(let char of str){
+                if(countMap[char] === 1){
+                    return char;
+                }
+            }
+
+            return null
+           
+        };
+
+        const result = findNonRepeatingChar("aafbbccd");
+        console.log(result)
+    </script>
+</body>
+
+</html>

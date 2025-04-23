@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function removeDuplicatesManual(arr) {
+            var seen = {};
+            var result = [];
+            for (let num of arr) {
+                if (!seen[num]) {
+                    result.push(num);
+                    seen[num] = true;
+                }
+            }
+            return result;
+        };
+
+        //    var arrayNumbers = [1,2,2,3,4,4,5];
+        var arrayNumbers = [99, 89, 99, 55, 34, 65, 55]
+        var funalResult = removeDuplicatesManual(arrayNumbers);
+        console.log(funalResult)
+    </script>
+</body>
+
+</html>
