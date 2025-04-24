@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function isAnagram(str1, str2) {
+            const s1 = str1.toLowerCase();
+            const s2 = str2.toLowerCase();
+
+            if (s1.length !== s2.length) {
+                return false;
+            }
+
+            const counter1 = {};
+            const counter2 = {};
+
+            for (let char of s1) {
+                counter1[char] = (counter1[char] || 0) + 1
+            }
+
+            for (let char of s2) {
+                counter2[char] = (counter2[char] || 0) + 1
+            }
+
+            for(let key in counter1){
+                if(counter1[key] !== counter2[key]){
+                    return false
+                }
+            }
+
+            return true
+
+        };
+
+        const finalRedult = isAnagram("silent", "hello");
+        console.log(finalRedult)
+    </script>
+</body>
+
+</html>
