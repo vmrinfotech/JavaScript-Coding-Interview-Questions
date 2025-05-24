@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function rotateArray(arr, k) {
+            if (!Array.isArray(arr) || arr.length <= 1) {
+                return arr
+            }
+            k = k % arr.length;
+            if (k < 0) {
+                k += arr.length
+            }
+            return [...arr.slice(-k), ...arr.slice(0, arr.length - k)]
+        }
+        let arrNos = [1, 2, 3, 4, 5];
+        console.log(rotateArray(arrNos, 3))
+    </script>
+</body>
+
+</html>
